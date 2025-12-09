@@ -6,20 +6,12 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
-        """
-        if len(nums)==1:
-            return nums[0]
-        
-        newlist=[]
+        """        
+        num=0
         for item in nums:
-            print(f"{item} : first {nums.index(item)} || last{nums[::-1].index(item)}") 
-            firstIndex=nums.index(item)
-            lastIndex=nums[::-1].index(item)
-            if firstIndex+lastIndex==len(nums)-1:
-                return item
+            num^=item
+        return num
         
-    
-
         
-numList=[2,1]
+numList=[2,4,1,2,1]
 print(Solution().singleNumber(numList))
